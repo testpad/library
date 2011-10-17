@@ -1,0 +1,236 @@
+Content checks
+    Contact us page/details exist
+    Contact details accurate
+    Contact details actually checked; emails/twitter/phone numbers work with successful delivery
+    No test content left on site
+    Colour contrast of text
+    RSS links to any feeds
+    Social share buttons working
+    Twitter widget working
+    Clear and consistent navigation model
+    proof read for
+        Spelling
+        Grammer
+        Capitalisation
+        Punctuation (apostrophes, quotes, hyphens)
+        Orphaned/widowed words looking odd at the end of important paragraphs
+        Invisible, or initially not-displayed, text such as alt text and content displayed by javascript
+    check consistency of
+        Tone of voice
+        Tense and consistent narrative point-of-view
+        Referring to website's brand
+        Referring to proper nouns and common phrases
+        Punctuation after items in lists
+        US/UK spelling
+        Fonts
+Markup checks
+    HTML doctype set
+    All internal/external links work
+    Important pages print nicely
+    No links point to test/staging domain, preferably all links relevative
+    Micro-formats present and correct, if relevant
+    HTML head and meta tags
+        Title not a template default
+        Description supplied and relevant to page contents
+        Viewport settings for mobiles and tablets
+        Manifest file for off-line caching
+        Favicon
+        Apple-specific favicons (various sizes)
+Javascript checks
+    No javascript errors
+    No debug output in console
+    Big blocks of commented code (unless minifying)
+    No sensitive data (secret keys or credentials, user passwords, etc)
+    3rd party libraries are the minified version
+    Search for TODO and FIXME
+SEO basics
+    Page titles are unique and relevant
+    Relevant meta-descriptions for all/important pages
+    Consistency of internal links (canonical URLs)
+    Target keywords used throughout site or on important pages
+    Target keywords are in html (not images)
+    Try reading the page with no CSS and no images
+    SEO friendly URLs
+    User friendly URLs and structure
+    Images have alt text
+    Submit sitemap.xml to major search engines
+    Uniqueness of content (no alternative URLs to the same content)
+Server config
+    404, 500 and other error pages customised and friendly
+    robots.txt
+    crossdomain.xml, if relevant
+    Log level not left at debug verbosity
+    Adword / campaign / referrer IDs make it to the log files
+    Database backup running regularly
+    Database backup tested for actually working
+    File/directory permissions and ownership
+    Admin and CMS pages protected
+    Links and redirects from your other sites updated if changing URL schemes
+    Firewall configuration / run port scanner
+    Site auto-restarts after a server power cycle
+    www subdomain redirects to main domain or vice-versa
+    DNS changes ready if any, with strategy for any propagation delays
+Legal
+    You own all the copyright or have permission to publish the content
+    Privacy policy in place
+    Website usage terms and conditions in place
+    Copyright notice, with current year
+    Business registration details present, if required
+Monitoring
+    internal monitors running for
+        Disk space
+        Load level
+        Memory/swap usage
+        Database key performance metrics
+        Request latency
+        Error monitoring of server logs
+        Exception monitoring of application logs
+        Broken links
+        Approaching expiry of certificates
+        Intrusion detection
+    notification / alerting
+        Email alerting of errors and warnings
+        SMS alerting of errors
+        Escalation process
+Third party tools
+    Website uptime monitoring (preferably from globally distributed locations)
+    Google webmaster console
+    YSlow run on important pages
+    Third party UX testing service
+    HTML validation
+    CSS validation
+    Javascript lint (maybe)
+    Accessibility testing
+    Broken link checker
+    Analytics
+        Visits and page counts
+        Goals configured
+        404 page counting (if not detecting separately)
+        Adword integration working
+Security considerations
+    // this section covers some of the basics
+    // for much more detail, please see the info and cheat sheets at https://www.owasp.org/
+    CSRF protection for all requests that effect server side changes
+    User-generated content
+        Prefer checking for valid input (whitelisting) rather than trying to refuse invalid (blacklisting)
+        Use a trusted vs untrusted data policy in the application code
+        Preferably use only parameterised database queries (prepared statements)
+        Escape all user data
+        Check escape syntax correct for use in
+            html element content
+            html attributes
+            javascript 
+            style elements
+            url attributes
+    Sites with user accounts / logins
+        User cookies use the secure flag
+        User cookies use the HttpOnly flag
+        Session ID long enough not to prevent brute force attacks
+        Session ID random enough not to be predictable
+        Session ID must look random, i.e not leak information
+        Renew session ID after privilege level changes
+        Treat session IDs as untrusted data that requires validation before using in database queries
+        Prefer as short a session expiration as makes sense for the application
+        Consider automatic timeout of idle sessions
+        Enforcement of password strength
+        Consider bland authentication failure messages that don't say what failed
+        Automatic account lockouts after repeated authentication failures
+        Passwords only sent over HTTPS connections
+        Authenticated pages all sent over HTTPS
+        Sensitive data is transmitted between servers over secured connections (TLS)
+        No sensitive data in URLs
+        Pages with sensitive data are not cached
+        Passwords (and other sensitive data) are stored encrypted in the database
+        PCI compliance/certification if storing cardholder data
+        Process for forgotten passwords reviewed
+    HTTPS / TLS
+        SSL certificates are for the live domain, not any staging domains
+        No SSL errors or warnings in all main browsers
+        SSL certificates have meta-data consistent with the brand and website
+        All content loaded via HTTPS links, including off-site links, no mixed secure/insecure content
+        Servers configured to only accept strong encryption
+        Server only supports TLS version 1.0 or greater
+        Private keys are strong, well stored and protected
+        Preferably no redirect from HTTP to HTTPS (e.g. on / or /login)
+Functional Testing
+    // obviously need to also test all proprietary functionality of the site
+    Check email delivery via third party service is working
+    Check inbox placement success rate if DIY email delivery
+    Site responds appropriately when javascript turned off
+    Site responds appropriately when cookies turned off
+    Search functionality works and produces relevant results
+    Double click on buttons
+    Forms reject invalid data
+    Forms display friendly validation errors
+    Unicode content (submits in forms and renders in content)
+    Bot traps for publicly accessible forms
+    Try markup and javascript in input fields
+    Try sql injection style attacks in input fields
+    Resize the browser through a range of sizes on all pages
+    Visit beginning, middle and last pages of paginated lists
+    Check forwards and backwards links work in paginated lists
+    Embedded videos working, and load quickly and completely
+    Browser Compatability
+        Big screen browsers
+            IE 9 & 10
+            IE 8
+            IE 7 and below
+            ChromeFrame for IE
+            Chrome
+            Firefox
+            Safari
+            Opera
+        Touchscreen mobile devices
+            iPhone
+            Android mobiles
+            iPad
+            Android tablets
+            Blackberry
+        Non-touch and smaller mobiles
+            Opera Mini
+            Provide meta tag to disable Google Wireless Transcoder if relevant
+Performance testing
+    Run YSlow on important pages
+    Load testing - request volume
+    Load testing - request size/impact
+    Check page size and download times
+Performance considerations
+    Image sizes and optimisation
+    Caching set correctly
+    Content distribution network needed?
+    Number of resources to download
+    Compression of http content
+    Minification/obfuscation of javascript and css
+    Verbosity of CSS
+    Database indexes
+    Javascript declared/loaded after HTML content
+Deployment process
+    Rollback procedure ready
+    Re-deployment on new servers tested for disaster recovery
+    Deployment of servers, code and content is as automated as possible, preferably a single command/button
+    Estimation of network and server loads after launch
+    Capacity of service understood from load testing
+    Responsibilities of team members understood for handling any problems post-launch
+    Payment gateway switched to live mode (not left in test mode)
+Updates requiring downtime
+    Will downtime be required for an update?
+    Staff and customers aware of any downtime
+    Marketing campaigns (e.g adwords) paused
+    Placeholder page ready during downtime
+Post launch
+    Suggest the site to the Open Directory Project (dmoz.org)
+    Setup google alerts for key terms relating to the site
+    Test the alerting and escalation process from time to time
+    run A/B testing to experiment and improve conversion ratios
+// sources
+    // http://www.breccan.com/2011/08/website-launch-checklist.html
+    // http://www.boxuk.com/blog/the-ultimate-website-launch-checklist
+    // http://www.webdesignerdepot.com/2010/02/using-a-pre-launch-checklist-for-your-website/
+    // http://blog.loadverify.com/2010/02/13/load-verifys-10-things-to-check-off-your-checklist-before-go-live-with-your-website/
+    // http://www.smashingmagazine.com/2009/04/07/15-essential-checks-before-launching-your-website/ and comments
+    // http://www.tpm-webapplicaties.nl/2009/04/8-essential-checks-before-launching.html
+    // http://www.elated.com/articles/hold-that-website-12-things-to-check-before-launch/
+    // http://boagworld.com/business-strategy/pre-launch-checklist/
+    // http://html5boilerplate.com/
+    // https://www.owasp.org
+
