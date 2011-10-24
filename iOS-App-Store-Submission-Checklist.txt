@@ -1,0 +1,71 @@
+Your app...
+    Does not simulate a failure (e.g. crash or cracked screen)
+    Remains responsive after long/excessive usage
+    Does not display any price information inside the app
+    Does not make use of any private APIs in the SDK
+    Does not make use of any undocumented features in the SDK
+    Does not refer to hardware capabilities which don't exist on the users device
+    Warns the user when there is no network connectivity, if it needs a connection
+    Does not resemble (too closely) any native apps
+    Does not replicate (too closely) the functionality of a native app
+    Does not expire (stop working) after a certain time or number of runs
+    Does not use any unapproved hardware accessories
+    Does not contain contain racist material, prolonged graphic violence, graphic sexual content or nudity
+    Does not "accidentally" contain such material, e.g. unrestricted web browsing, explicit lyrics, unfiltered collections of books
+    Does not ridicule well-known public figures, past or present
+    Does not contain a scripting interpreter, plugin or other runtime that can execute downloaded content
+    Does not use continuous vibration
+    Uses the relevant keyboard per input field (e.g. numbers for a phone number field)
+    Deselects rows in table views after their selection causes another view to be displayed
+    Restricts video streaming or other big downloads to WiFi connections only
+    Makes clear to the user when private data will be sent to a server, and provides an opt-out
+    Does not make covert or non-obvious use of the camera or microphone
+    Uses Core Location (GPS) for a real user benefit, not just advertising or tracking (if applicable)
+    Never crashes
+Conforms to Apple's Human Interface Guidelines
+    // you should really use the document itself and check every section, the following are some common mistakes
+    App looks well designed and of high quality
+    Native button icons are consistent with their native actions
+    Activity spinners must not spin indefinitely
+    Buttons trigger on touch-up
+    Screen layout can handle the double-height status bar (e.g. during phone call)
+    App state is saved when stopping the app and restored on next start
+    Landscape mode, if supported, looks well designed (i.e. is not accidental and bad)
+iPad specific
+    Your app works in all four orientations
+    Don't nest popovers, i.e. selecting something on a popover should not display another popover
+Submission package details
+    The name of your app (in the binary package) matches (or is abbreviated version of) the iTunes name
+    Your iTunes description accurately describes the functionality of the app, i.e. it works as advertised
+    Your iTunes description does not contain the price
+    Your iTunes keywords match the functionality of the app
+    Your iTunes keywords do not contain the names of other apps
+    The screenshots do not include error states, including iAd errors
+    The categories the app is in match its functionality
+    Any easter eggs in the app are innocuous and are disclosed in the 'demo account' field
+    Icons are provided for each of the sizes: 57, 72 (if on iPad), 114 and 512 pixels
+    The different sizes of icon all contain the same artwork
+    Version number (bundle version number) is >= 1.0
+    The required-device-capabilities entry in the info.plist file match the requirements of the app
+    Your app matches your claimed OS version compatibility
+    (when updating) Your iTunes "What's New" description accurately matches the changes to your app
+    (when updating) The updates to your app are real and detectable
+    (when updating) Version number is greater than the previous version number
+Miscellaneous
+    The app has a reasonably sized market, i.e. is not a tiny niche or for a private audience
+    There are no greyed out buttons or features in your app to do with a future release or paid upgrade
+    Lite versions of apps must not appear restricted or have disabled sections
+    Lite versions must not prompt (up-sell) the full or paid version
+    Lite versions must not display the price of the full version
+    Webpages loaded by the app, that are part of the app itself, are online and working
+    Any associated email addresses exist and are working
+    All (paid) app upgrades and other transactions use the App Store
+    The app is not a simple browser window onto a website
+    The app conforms to any regulatory requirements, e.g. if the app is medical in nature, or contains contests with prizes
+Copyright, trademark, ownership
+    You can prove you own (or have permission to use) all the code in your app
+    You can prove you own (or have permission to use) all the artwork in your app
+    You can prove you have permission to use any brand names, names of public figures or other trademarked material
+    e.g. Images and icons are not framed with a "polaroid" style (thicker at the bottom) border
+    e.g. Images and icons do not include iPhones or other Apple products
+    You can prove you own (or have permission to use) any videos, music or lyrics in your app

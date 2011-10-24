@@ -1,0 +1,421 @@
+Signup
+    /signup redirects to https version
+    normal process, new values, email confirmation sends
+    all blank fields, gets form errors per field
+    taken account name rejected
+    taken email address rejected
+    special characters ignored in account domain name
+Login (on central site)
+    normal login
+    redirects to correct account
+    blank email ignored
+    wrong password
+    blank password
+    logout goes to login page
+    trying to load /manageScripts after logout stays on login page (with url with next link)
+    logging in after the redirect to the login page takes you to the page you tried to load
+Forgotten Password
+    Successfully sends to your email
+    Rejects unknown email
+    Click on received link, taken to user-details page
+    Click on received link whilst already logged in as different user, re-logs in as emailed user
+Login (on account page)
+    normal login
+    user for another account get denied
+    blank email ignored
+    wrong password
+    blank password
+Help menu
+    welcome tutorial can be restarted via the help menu
+    keyboard shortcuts displayed via the help menu
+    keyboard shortcuts displayed with Alt-? (with nothing selected)
+    keyboard shortcuts displayed with Alt-? (with case and run selected)
+    keyboard shortcuts displayed with Alt-? (with case focused)
+    feedback option opens feedback dialog
+    links all work in feedback dialog
+Script name and description
+    Script->settings menu option opens script settings dialog
+    Double click on script name opens script settings dialog
+    Double click on script description text opens script settings dialog
+    edit script name and save; main script page title changes
+    script name in Testpad menu -> jump to script also changes
+    edit script description and save; changes show on main page
+    short description displays in entirety
+    long description clipped and displayed on mouse click
+    edit script name and reload before saving, edit is discarded
+    set script name to blank and save; settings dialog stays open with error message
+    blank description works fine
+    punctuation characters work fine in script name
+    punctuation characters work fine in description
+    unicode characters display fine (case notes have tips)
+    unicode escape sequences stay as they are
+    html code in name/description stays as it is
+    javascript code in name/description stays as it is, benign
+Script case lock
+    Open script settings dialog, lock cases (left hand lock) and save; padlock shows near script title
+    Case text colour goes grey
+    Clicking on cases just selects them, doesn't focus them
+    Drag and drop doesn't work
+    Copy and paste doesn't work
+    Delete doesn't work
+    Tab and Shift-Tab don't work
+    Import cases doesn't work
+    Alt-M, edit, save - doesn't save tags
+    Alt-M, edit, save - doesn't save notes
+Script release lock
+    Open script settings dialog, lock the script for testing (right hand lock) and save; padlock near test runs shows
+    new test run button not displayed
+    Run header popup menu now says "view" not "edit" details
+    Run headers popup menu doesn't show delete this run
+    Clicking on fields on the RHS of run details flashes up message saying locked; can't edit
+    Can't change "test can be run by" drop down
+    Can't change inprogress slider
+    Can send email with link to run the test
+    Can view 2d barcode
+    Can use the run header's popup menu to Run this test
+    Results can be set to pass/fail/blocked etc (i.e. testing works)
+    Test run can finish, which does change state from inprogress to completed
+    Can't re-open
+    Can't start a retest
+Case editing, initial
+    start a new script, focus should be ready on first empty case
+    clicking on case area when there are no cases creates and focuses one
+    pressing ENTER when there are no cases creates and focuses one
+Case editing, general
+    edit a case, press escape to de-focus, reload page, change should be persisted
+    edit a case, move focus up or down, reload page, change should be persisted
+    edit a case, click on script title area, reload page, change should be persisted
+    pressing enter when a case is selected (not focused) puts focus on that case
+    pressing enter when a case is focused starts a new case below
+    new case gets an ID in the left-hand column
+    select several rows, pressing enter should reduce the selection and focus on the last selected case
+    cursor left/right on focus moves the caret, limited to the case input field
+    cursor left/right with no focus, and with run selected, moves run selection (need a few runs to see)
+    cursor left/right with nothing selected selects first/last run
+    cursor up/down moves selected case
+    cursor up/down with multiple rows selected reduces selection to one row above/below the last selected row
+    cursor up/down with no case selected (press escape a few times) puts focus on first row
+    tab indents case
+    tab can't indent if already indented
+    tab can't indent first case
+    tab can't indent after six levels deep
+    shift-tab outdents
+    outdenting a case moves existing children with it
+    outdenting picks up old siblings as new children
+    outdenting when already at the left margin is ignored
+    press and hold cursor down, starting with a focus'd row; focus should stay with selection
+Case links
+    URL hash part changes as case selection moved up and down
+    URL with hash loads straight to the named case
+    browser history does not accumulate each hash number, i.e. back still goes to previous page, not previous case
+Import
+    use menu option to open import dialog
+    flat list of cases appended without structure
+    newly appended cases are selected immediately after the import
+    view jumps down to show new cases
+    open import dialog again; should be empty
+    add cases with a consistent indent pattern; import; new cases structure as per indents
+    new import; add cases with inconsistent indent pattern; import; cases added with structure as per (normalised) indents
+Export
+    Export flat list of cases as text
+    Export structured list of cases; text cases have indents accordingly
+    Export text window can be selected, copied and pasted elsewhere
+    Export structured list of cases, no results, as CSV; CSV opens in Excel with correct data
+    Export cases with results as CSV; open in Excel; all data present
+    Empty result columns export as CSV ok
+    Sparse result columns export as CSV ok
+    Issues and comments against results export as CSV ok
+    Case notes and tags export as CSV ok
+    Custom fields and their run values export ok
+    Custom fields with no run values export ok
+Multiple selections
+    click and drag on a previously unselected case makes a multiple selection
+    shift click extends selection from current to clicked case
+    shift up/down extends/contracts selection
+    ctrl/cmd click selectively adds cases to the selection, non-coniguously
+    shift-click after a ctrl-click extends from the last added case
+    indent
+        all rows of a multiple selection indented
+        selection of parent and some children moves parent without changing children
+        non-contiguous selection only applies indent to parents, all children move with parents
+    outdent
+        all rows outdented
+        selection of parent and some children moves parent without changing children
+        non-contiguous selection only applies outdent to parents, all children move with parents
+    delete
+        all selected rows deleted
+        unselected children (with parent selected) survive
+    move (ctrl-up/down)
+        selected rows moved one row at a time as a block
+        non-contiguous selections become contiguous and move to before or after the first/last row
+        moving blocks up add them as siblings of the previous row
+        moving blocks down add them as siblings if no children
+        moving blocks down add them as first child if children already exist
+        moved blocks stay in order
+        moved blocks, where they start non-contiguous, remain in relative order
+Drag and drop
+    brief click on already selected row ignored
+    long click fades selection out, ready for move
+    insert position shown when mouse moved out of current selection
+    insert position hides when mouse moved back inside current selection
+    dropping inside current selection ignored
+    dropping on insert position works as advertised
+    insert position shows count of rows that will be moved
+    dragging a selection of just one parent row includes children in count and the move
+    dragging a multiple selection with only partial selections of children include all children
+    dragging outside of the case table ignored
+    insert positions restricted to as-sibling and as-child options only
+Test run header fields
+    click on test run header shows popup menu
+    select edit run details to show run details dialog
+    fields in dialog all show same values as in run header
+    only 'tester alias' and 'cases' editable by default
+    selecting a user changes 'tester alias' to just 'tester' and becomes readonly
+    selecting user back to 'anyone' changes field back to 'tester alias'
+    delete button asks for confirmation
+    cancel cancels delete
+    confirm deletes run column
+Test run delegation
+    open test run details dialog (via run header popup menu, or alt-r)
+    with 'test can be run by' set to anyone, delegation links are email to self and show 2d barcode
+    with 'test can be run by' set to self, delegation links are email to self and show 2d barcode
+    with 'test can be run by' set to another user, delegation links are send email only
+    with 'test can be run by' set to Guest, delegation links are send email only
+    email to self has To: field set to your email, readonly; and with no empty editable sections of email
+    email to guest has blank editable To field, with invitation/explanatory text prepopulated
+    email to other user has readonly To: field set to their address; with invitation/explanatory text prepopulated
+    running tests as guest on laptop
+        clicking email delegation link launches browser
+        browser loads right script, with only one run displayed, and logged in as Guest
+        guest can pass/fail etc tests
+        guest can clear all
+        guest can set test as completed before finished running tests
+        guest can't reopen a completed test
+        guest can start a retest, new run loaded with next minor run number incremented
+        reloading the email link after starting a retest loads the retest, not the original
+        guest can pass/fail results in the retest
+        menus limited to testpad (limited options), edit (just undo), reporting (no sharing option) and help
+        trying to load a different script id (by editing URL) goes to login page
+        trying to load a different run id (by editing URL) goes to login page
+        trying to load manageScripts page goes to login page
+    running tests as normal user on laptop
+        clicking email delegation link launches browser
+        browser loads right script, with all runs present, but right run selected with test run dialog ready to go
+        user can pass/fail tests
+        user can clear all
+        user can complete and reopen the test mid-progress
+        user can complete and start a re-test
+        clicking on the emailed link, after starting a retest, this time selects the retest, not the original test run
+Filtering cases from test runs
+    default 'cases' value in run header is 'all'
+    all cases included in test run (none blended out)
+    change 'all' to 'special', all cases now excluded (blended/greyed out)
+    open the case details dialog for a case and set the tags field to 'special'
+    case with tag 'special' now included in the test run
+    open case details dialog for a parent case and set tags to 'special'
+    parent and all children now included in the test run
+    edit 'cases' field in test run details to '-special'
+    case filter is now inverted, only those cases not tagged 'special' are included
+    test run with cases requiring 'special, high' only includes cases tagged both 'special' and 'high'
+    test run with cases requiring 'special' includes cases with multiple tags provided one tag is 'special'
+Field Editing
+    clicking on field labels shows field edit dialog
+    hide a currently visible field and save, field removed from display
+    hidden field stays hidden on page refresh
+    move a field, field order changed in page
+    moved fields also change order in test run details dialog
+    new field with blank name allowed
+    new field with decent name added to display
+    new field also visible and editable in test run details dialog
+    delete a field, field disappears from display and test run details dialog
+    re-add a field with same name, old values in test runs are NOT remembered
+    select a field for deletion and deselect it for deletion, leaves field unchanged
+First test run
+    new test run button makes a new column
+    run number uses next number
+    sensible defaults in fields
+    run test option in popup menu displays run dialog
+    pass with no issue or comment
+    pass with issue
+    pass with comment
+    pass with issue and comment
+    fail with no issue or comment
+    fail with issue
+    fail with comment
+    fail with issue and comment
+    block with comment
+    query with comment
+    exclude changes test total (down by one)
+    auto-advance jumps over parent case rows
+    clicking on parent shows disabled result buttons and fields with reason in case window
+    next jumps according to auto-advance
+    prev jumps according to auto-advance
+    auto-advance
+        every test
+        untested tests
+        blocked and untested
+        failed, block and untested
+    issue links
+        by default issue numbers inactive when clicked on
+        setting a pattern in the Account Settings page makes them active
+        clicking on an issue loads the pattern with issue number substituted
+        issue link is loaded in new tab/window
+    progress changes with pass/fails
+    progress for column at full width when column all set
+    progress for script at full width when all columns full
+Re-testing
+    change inprogress-complete slider to complete in the test run dialog (double click run header)
+    options to set tester are hidden in the run edit dialog
+    button to retest appears in run edit dialog
+    clicking retest creates a new run column
+    new run column has id of the form 1.1
+    new run column by default inherits results from old run, shown slightly translucent
+    old run column greyed out
+    old run results don't contribute to the release progress bar (top of page)
+    run edit dialog now shows new test runs data
+    selecting old test run shows a message saying it has been superceded
+    refresh of the page draws only the retest column, hiding the old run
+    clicking on run popup menu: show old runs - shows old runs
+    clicking run popup menu: hide this run - hides it
+    clicking on show old runs in run popup menu shows them
+    deselect "inherit results from" and save dialog removes inherited results
+    pass/fail one or two results in new column
+    re-inherit results, pulls in old results for all results except the new ones
+Reporting
+    report sharing dialog shows when select 'sharing...' in Reporting menu
+    external links start disabled in a new script
+    toggling on external links enables links and shows email buttons
+    email buttons launch a mailto window with body containing link
+    link is to report page with auth= parameter
+    in different browser, ensuring logged out each time....
+        shared link works
+        change auth token and get 401 error
+        change script number with correct auth token and get the login page
+        change account subdomain and get 404 not found
+    deselect enable external links
+    existing shared links stop working
+    re-enable external links
+    new links work, old links still not working
+    interactive report
+        shows report(release) description
+        interactive link works, shows readonly page similar to working view
+        can collapse/expand case groups
+        vertical scrolling works
+        horizontal scrolling of test runs works
+        window resize handled OK
+    simple report
+        single html page, no other resources loaded (check in browser network trace)
+        fixed layout, page scrolls but no interactivity
+        shows report(release) description
+        displays various case and result types OK:
+            parent cases
+            comment cases (start with //)
+            parents of parents
+            pass
+            fail
+            blocked
+            query
+            skipped
+            untested
+            custom fields in run header
+Layout
+    window resizing
+    case column resizing
+    dialog movement
+    multiple dialog layering
+    scrolling with <10 cases
+    scrolling with >100 cases
+    one run column
+    several run columns
+    >10 run columns and scrolling
+Undo
+    edit a case, edit menu undo shows "undo edit case", undo works
+    move a case, edit menu shows "undo case move", undo works
+    delete a case, edit menu shows "undo delete case", undo works
+    edit case tags, edit menu shows "undo edit tags", undo works
+    edit case notes, edit menu shows "undo edit notes", undo works
+    set a result, edit menu shows "undo test result", undo works
+    move a multiple selection, edit menu shows "undo move N cases", undo works
+    delete a multiple selection, edit menu shows "undo delete N cases", undo works
+    indent a case, edit menu shows "undo case indent", undo works
+    outdent a case, edit menu shows "undo case outdent", undo works
+    perform several changes, undo walks back through the history
+    move a multiple selection upwards within the same parent, order preserved on the undo
+    move a multiple selection downwards within the same parent, order preserved on the undo
+    import cases, edit menu shows "undo import cases"
+    can't undo's
+        new test run
+        delete test run
+        edit script name
+        edit script description
+        edit scripts report comments
+Keyboard shortcuts
+    Alt-M displays case details dialog with focus on the case text itself
+    Alt-T displays case details dialog with focus on the tags field
+    Alt-N (when not editing a case) shows case details dialog with focus on the notes field
+    Alt-R shows the test run details dialog for the current run
+    Alt-R when there are no test runs shows an empty (no run selected) version of the dialog
+    Alt-X starts/continues the test run (shows the test run dialog)
+    Space (when not editing a case) expands/collapses a case group
+    Escape when editing a case defocuses it, saving it, and leaves it selected
+    Escape when cases are selected deselects them
+    Escape when a dialog is open with focus in a field drops the focus from the field
+    Escape when a dialog is open with no focus in a field closes(saves) the dialog
+    Ctrl/Cmd - Z performs the next Undo action, flashing the script menu to show "it heard"
+Manage Scripts
+    manage script pages shows list of active scripts
+    in progress scripts (those without all runs completed) have run details expanded
+    completed scripts have run details hidden
+    toggle link at top-right shows/hides details for all scripts
+    script delete
+        options - delete script highlights row for deletion
+        delete cancel re-instates row
+        delete confirm deletes script; refresh shows script still gone
+    script name edit
+        options - edit name prompts name edit for script
+        edit and save changes name
+        edit and cancel leaves name unchanged
+        edit and reload (before save) leaves name unchanged
+    script archive
+        options - archive slaps an archive label on the script
+        reload after archive doesn't include the archived script
+        switch to archived tab and newly archived script is in the list
+        still in archive tab; options - unarchive draws script row in unarchived/normal state
+        refresh (of archived tab) doesn't include the unarchived script
+        switch back to scripts tab, newly unarchived script is back
+    script save as template
+        options - save as template switches to templates tab with new template prompting for a name
+        name defaults to script name with (template) appended
+        script description defaults to (created as a copy of script ...)
+        open template for editing; confirm cases copies
+    script start fresh copy
+        options - make a fresh copy; starts a new script with the same name with (copy) appended
+        open new script, confirm cases, but not runs copied
+Manage Users
+    manage users tab lists all the users as cards plus an empty card for creating a new user
+    Clicking on new user shows a new user details page
+    user details page has fields for name, email address and type (which defaults to normal)
+    submitting with an email that already exists in the system is rejected
+    blank name is rejected
+    blank email is rejected
+    submit proper details; back on list of users, with newly invited user highlighted
+    new user says 'pending email invitation'
+    reload the page and highlight goes away
+    click on email confirmation link (you did send the new user email to an address you can see right?)
+    link loads the user details page for the new user with message asking them to set a password
+    Save link goes back to user details page with new user highlighted, and with normal labelling
+    Open a script, new user is shown the welcome tutorial flash cards
+    Reload the script, new user is no longer shown the flash cards
+    Log back in as account owner (got logged out when clicking email link for new user), user list shows new user
+    Add and confirm a new admin user
+    When logged in as account owner, can open options menu for every user by clicking on their card
+    When logged in as admin, can open options menu for every user
+    When logged in as admin, account owners card's menu only shows password help
+    When logged in as admin, all cards show delete option except self and account owners
+    When logged in as normal user, can only open options menu for own card, and no delete option
+Change email address
+    log in as a normal user and open user details page
+    supply and submit a new email
+    back on user list, user's card highlighted and shows 'pending email confirmation' message
+    click on email confirmation message
+    taken to user list page with users card showing normal labelling and new email address

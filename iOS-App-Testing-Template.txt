@@ -1,0 +1,59 @@
+Start and Stop
+    App installs over wifi
+    App installs over 3G
+    App installs via iTunes and cable
+    App starts up OK
+    App resumes OK (after task switching away and touching app icon again)
+    App exits OK (press and hold app icon in task bar, and press '-')
+    App does not crash on exit (check crash logs)
+    App restarts after exit OK
+    App uninstalls OK
+    Icon has "added gloss" disabled if it already includes a gloss effect
+    App can handle exit in the middle of any longer-running action
+iPhone Configuration Tool's console
+    console does not report any errors during normal use of the app
+    app does not generate any unexpected system warnings
+    console reports acceptable app warnings during normal use of the app
+Internationalisation
+    App works as expected with different language settings
+    App works as expected with different timezone settings
+    App handles daylight savings changes
+Memory usage
+    App consumes reasonable memory
+    App still functions when most spare memory has been (artificially) pre-allocated (e.g. open multiple safari windows)
+    App fails gracefully when there is not enough memory
+    App does not leak memory during prolonged usage
+    App does not slow down with big data sets or after big downloads
+Network performance
+    App warns the user when there is no network connectivity (if it needs it)
+    App does not mistakenly warn the user there is no network when there is
+    App is not confused by wifi hotspots that require a login before providing access to the internet
+    App can handle malformed data from upstream components
+    App copes with poor connectivity (find poor reception, or partially cover with foil)
+    App uses expected/reasonable bandwidth
+    App uses limited bandwidth over cellular connections
+Battery usage
+    App does not excessively drain the battery (backlight, CPU)
+    Low battery warning is displayed when battery low
+Text input
+    App can handle unicode characters in input boxes
+    App can handle huge input (use copy'n'paste from a paragraph elsewhere)
+    App can handle punctuation characters where text is expected
+    App can handle badly formatted input
+    App can handle empty data input
+    Action button in keyboard is appropriate ('done', 'search', etc)
+    Text field can be cleared when appropriate
+Co-existence with background apps
+    App handles receiving phone call gracefully
+    App layout OK during a phone call with double height status bar
+    App functions smoothly when music is playing in the background
+    App handles popup notifications from other apps gracefully
+    Connecting charger does not interrupt or spoil the app
+    Removing charge does not interrupt or spoil the app
+User friendliness
+    Actions taking longer than 2seconds have visual feedback of activity
+    Rapid key presses are handled OK and do not cause slow-downs
+    Page scrolling is smooth and responsive
+Databases
+    If using Core Data, and the schema has changed, test upgrading from earlier versions
+    Test upgrading app user defaults
