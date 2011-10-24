@@ -1,0 +1,42 @@
+CSRF protection for all requests that effect server side changes
+User-generated content
+    Prefer checking for valid input (whitelisting) rather than trying to refuse invalid (blacklisting)
+    Use a trusted vs untrusted data policy in the application code
+    Prefer parameterised database queries (prepared statements)
+    Escape all user data
+    Check escape syntax correct for use in
+        html element content
+        html attributes
+        javascript
+        style elements
+        url attributes
+Sites with user accounts / logins
+    User cookies use the secure flag
+    User cookies use the HttpOnly flag
+    Session ID long enough not to prevent brute force attacks
+    Session ID random enough not to be predictable
+    Session ID must look random, i.e not leak information
+    Renew session ID after privilege level changes
+    Treat session IDs as untrusted data that requires validation before using in database queries
+    Prefer as short a session expiration as makes sense for the application
+    Consider automatic timeout of idle sessions
+    Enforcement of password strength
+    Consider bland authentication failure messages that don't say what failed
+    Automatic account lockouts after repeated authentication failures
+    Passwords only sent over HTTPS connections
+    Authenticated pages all sent over HTTPS
+    Sensitive data is transmitted between servers over secured connections (TLS)
+    No sensitive data in URLs
+    Pages with sensitive data are not cached
+    Passwords (and other sensitive data) are stored encrypted in the database
+    PCI compliance/certification if storing cardholder data
+    Process for forgotten passwords reviewed
+HTTPS / TLS
+    SSL certificates are for the live domain, not any staging domains
+    No SSL errors or warnings in all main browsers
+    SSL certificates have meta-data consistent with the brand and website
+    All content loaded via HTTPS links, including off-site links, no mixed secure/insecure content
+    Servers configured to only accept strong encryption
+    Server only supports TLS version 1.0 or greater
+    Private keys are strong, well stored and protected
+    Preferably no redirect from HTTP to HTTPS (e.g. on / or /login)
