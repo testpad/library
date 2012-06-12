@@ -10,7 +10,7 @@ Content checks
     Clear and consistent navigation model
     proof read for
         Spelling
-        Grammer
+        Grammar
         Capitalisation
         Punctuation (apostrophes, quotes, hyphens)
         Orphaned/widowed words looking odd at the end of important paragraphs
@@ -125,6 +125,7 @@ Functional Testing
     Visit beginning, middle and last pages of paginated lists
     Check forwards and backwards links work in paginated lists
     Embedded videos working, and load quickly and completely
+    Edit URL parameters to check extreme values
 Browser Compatability
     Big screen browsers
         IE 9 & 10

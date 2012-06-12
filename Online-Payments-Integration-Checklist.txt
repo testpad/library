@@ -1,0 +1,95 @@
+Basic Components
+    Payment Gateway
+    Merchant Account
+    Collection of Payment Details
+    Recurring Billing business logic
+Fees
+    setup fees
+    monthly/recurring fees
+    per transaction fixed amounts
+    per transaction % amounts
+Payment Details Collection
+    Self-hosted or 3rd-party
+    Implications for PCI Compliance
+    Customisation potential for consistent branding/look-and-feel
+Free Trial
+    time limited or feature limited
+    credit card details up-front or later
+    payment provider support for free trials and details up-front vs later
+    email reminders during free trial
+    UI prompts during free trial
+    handling expiry of free trial
+Subscription Plan Design
+    basic segmentation model; how will different plans be differentiated
+    implications of plan 'sizes' on code and enforcement of limits
+    is enforcement necessary at the outset
+    implications on the UI of the different sizes
+    are unavailable actions hidden, or visible but prompt an up-sell
+    subscription period: monthly and/or annual
+    special deals for charities, open-source projects, academic institutions
+    any add-ons that aren't part of the subscription plans
+Chargebacks and refunds
+    payment provider support for challenging chargeback requests
+    any fees associated with this
+    is the product likely to incur lots of chargebacks
+    policy for refunds
+    refunds for unused/partial days/months
+Cancellations
+    how will customers cancel their subscription
+    cancellation in 'local' product code
+    cancellation in 3rd party payment provider's system
+    immediate cancellation or deferred to end of the current/paid billing period
+    delete account data or keep in case of reactivation
+    any scope to prompt for 'exit feedback' from departing customers
+Upgrades and Downgrades
+    how will customers upgrade or downgrade their subscription
+    is the new charge deferred to the next billing period or incurred immediately
+    pro-rated charge or simple change on next billing date
+    same policy for longer subscription periods, e.g. annual may need different policy
+    when does the upgrade/downgrade take effect
+    how will the UI handle or prevent downgrades when current usage exceeds a lower plan
+Payment Failures
+    process implemented locally or by 3rd party
+    customisation of the content of reminder emails
+    customisation of the number and timing of reminder emails
+    method of notifying eventual failure
+    impact on UI during the process of chasing payments
+    what does the UI do on eventual expiration/cancellation
+Discounts, vouchers and coupons
+    free accounts
+    indefinite % discounts
+    N months discounted
+    single and multi-use coupons
+    coupons/vouchers with customisable text (or just random codes)
+    scope for affiliate deals and their tracking
+Beta Audience
+    process for migrating beta audience
+    scope for special/different messaging
+    discounts
+    join free trial or convert to paid accounts
+Currencies
+    currency that customers are charged in
+    currency of merchant account
+    currrency of settlement account
+    configuration of prices in the product
+    configuration of prices in payment provider's system
+    which countries need/are supported by payment provider
+Sales Tax/VAT
+    selling to regions that require sales tax or VAT accounting
+    display prices inclusive or exclusive of taxes
+    keep net price constant or gross price constant
+    accounting of taxes on invoices/receipts
+    accounting of taxes at settlement time
+API integration
+    notification of activations, changes and cancellations
+    polling of subscription status and details
+    security of outbound requests and inbound notifications
+    how to test changes in notification handling code once live
+Miscellaneous
+    frequency of transferring funds into settlement account
+    analytics and tracking: scope to include google analytics/adwords IDs on the relevant pages
+    support for other payment methods: purchase orders, invoicing etc
+    are the Terms & Conditions and Privacy Policies up to date
+    payment provider test mode features, e.g. simulating payment failure, test payments
+    payment provider reporting features (dashboards, statements, statistics etc)
+    process for adding a new subscription plan after original plans go live
