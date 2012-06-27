@@ -1,7 +1,7 @@
-The Testpad Library is a collection of example/reference test scripts for common scenarios.
-This repository stores the plain-text versions of the library. Feel free to fork, edit and
-send me pull requests with additions or improvements.
+These files are copies of the (interesting) examples on the Testpad home page, and can be used for importing into your own Testpad accounts.
+
+Click on a file and view in Raw mode, then Select All and Copy before starting a new script in your Testpad account and using the Edit->Import dialog to Paste these tests in.
 
 Find out more about Testpad at the homepage: https://ontestpad.com.
 
-Find the example library at: https://ontestpad.com/examples.
+Browse the example library at: https://ontestpad.com/examples.
