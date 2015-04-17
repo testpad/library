@@ -1,4 +1,5 @@
 Your app...
+    Never crashes
     Does not simulate a failure (e.g. crash or cracked screen)
     Remains responsive after long/excessive usage
     Does not hardcode any price information inside the app
@@ -21,7 +22,10 @@ Your app...
     Makes clear to the user when private data will be sent to a server, and provides an opt-out
     Does not make covert or non-obvious use of the camera or microphone
     Uses Core Location (GPS) for a real user benefit, not just advertising or tracking (if applicable)
-    Never crashes
+    Does not make excessive use of iCloud storage
+    Only stores user-created content in iCloud
+    Stores temporary files in /tmp and deletes these on exit
+    Uses the "do not back up" attribute for files that need to persist but should not be saved to iCloud
 Conforms to Apple's Human Interface Guidelines
     // you should really use the document itself and check every section, the following are some common mistakes
     App looks well designed and of high quality
